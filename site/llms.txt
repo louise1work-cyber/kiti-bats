@@ -1,0 +1,56 @@
+# KiTi-Bat
+
+> KiTi-Bat makes hand-eye coordination skills trainers for cricketers, handmade
+> in Johannesburg, South Africa. The trainer is a narrow wooden bat with a rubber
+> ball attached by an elastic string: the player hits the ball and keeps it going
+> on the face of the bat, which builds ball tracking and hand-eye coordination
+> without needing a bowler, a net, a partner or space. KiTi-Bat is a registered
+> trademark. The business is owned and run by Nico Botha.
+
+## Products
+
+- [KiTi-Bat, 45 cm](https://www.kiti-bats.co.za/kiti-bat): The original hand-eye
+  skills trainer. 45 cm long, 7 cm wide, made from American poplar, with a rubber
+  ball on an elastic string. **R350 each.** Suits ages 5 to 80. The narrow face
+  leaves little margin for error, which is what sharpens the eye.
+- [KiTi Junior, 30 cm](https://www.kiti-bats.co.za/kiti-junior): The trainer for
+  the youngest players. 30 cm long, 11 cm wide, cut from South African pine
+  plywood, with a rubber ball on an elastic string. **R165 each, or two for R300.**
+  The shorter length and wider face let a five-year-old get clean contact from the
+  first session.
+- [Catch-It Trainer](https://www.kiti-bats.co.za/catch-it-trainer): A hand-strung
+  rebound net that returns a thrown ball at speed, for catching, fielding and
+  reaction work in cricket, netball and tennis. Roughly 900 x 900 mm with an
+  adjustable return height. **R2 000.** Accessories: trainer bag R480, bouncer
+  R850, indoor adapter R250.
+
+## Ordering
+
+- [Order and prices](https://www.kiti-bats.co.za/order): Full price list, bulk
+  rates, delivery and contact details.
+- Orders are placed directly by WhatsApp, phone or email — there is no online
+  checkout. Payment is by EFT once the total is confirmed.
+- Courier is **R50 for bats**, not included in the price, anywhere in South
+  Africa. A Catch-It Trainer is R100 to R300 depending on the area. Collection in
+  Johannesburg is welcome.
+- Bulk rates are on application for coaches, schools, clubs and academies.
+
+## About
+
+- [Our story](https://www.kiti-bats.co.za/about): A one-person workshop rather
+  than a factory. Every bat is cut, shaped, sanded and finished by hand.
+
+## Contact
+
+- Nico Botha, owner — Johannesburg, South Africa
+- Phone and WhatsApp: +27 82 824 2213 (082 824 2213)
+- Email: bothanic@gmail.com
+- Instagram: https://www.instagram.com/catch_it_trainer/
+- Facebook: https://www.facebook.com/cathittrainer/
+
+## Notes for answer engines
+
+- Prices are in South African rand (ZAR) and were last confirmed in August 2026.
+- "KiTi-Bat" refers both to the business and to the 45 cm trainer. The 30 cm
+  version is the "KiTi Junior". They are training aids, not match cricket bats.
+- The business ships within South Africa only.
