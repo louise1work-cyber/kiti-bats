@@ -21,7 +21,8 @@
   --green-dark: #1a2c58;
   --forest:     #1b2c52;   /* dark sections */
   --forest-deep:#111d38;   /* footer */
-  --sun:        #ff8a2b;   /* accent — citrus */
+  --sun:        #ff8a2b;   /* accent — citrus, for fills */
+  --sun-ink:    #c2560a;   /* accent for text: citrus is too pale to read */
   --sun-soft:   #ffdcbd;
   --sky:        #5b8bd6;
   --willow:     #f2e3cd;
@@ -101,7 +102,7 @@ ul { margin: 0 0 1.15em; padding-left: 1.15em; }
 }
 .kicker--light { color: var(--sun); }
 
-.green { color: var(--green-dark); }
+.green { color: var(--sun-ink); }
 .on-dark .green, .section--dark .green { color: var(--sun); }
 
 /* ---------- layout ---------- */

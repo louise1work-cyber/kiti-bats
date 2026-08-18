@@ -39,6 +39,13 @@
     return;
   }
 
+  /* Don't spend a visitor's mobile data on a decorative clip */
+  if (window.matchMedia && window.matchMedia('(max-width: 700px)').matches) {
+    v.removeAttribute('autoplay');
+    v.controls = true;
+    return;
+  }
+
   /* Only fetch the clip once the band is actually on screen */
   if (!('IntersectionObserver' in window)) { v.preload = 'auto'; v.load(); return; }
   var io = new IntersectionObserver(function (entries) {
