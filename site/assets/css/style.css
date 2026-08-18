@@ -553,3 +553,20 @@ ul { margin: 0 0 1.15em; padding-left: 1.15em; }
   color: var(--ink-mute);
   text-align: center;
 }
+
+/* ---------- image crop helpers ----------
+   Portrait photographs of people must never be centre-cropped into a
+   landscape box: it takes the heads off. */
+.hero__art--portrait img {
+  aspect-ratio: 4 / 5;
+  object-position: 50% 18%;
+}
+/* Full-length product shots: show the whole bat rather than crop it */
+.hero__art--product img {
+  aspect-ratio: 4 / 5;
+  object-fit: contain;
+  background: #fff;
+  padding: 1.25rem;
+}
+/* Keep faces in frame inside square gallery tiles */
+.img-top { object-position: 50% 15% !important; }
