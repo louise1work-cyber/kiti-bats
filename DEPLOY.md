@@ -1,51 +1,66 @@
-# Putting the KiTi-Bat site live on xneelo
+# KiTi-Bat — hosting on Vercel
 
-Everything that goes on the server is in the `site/` folder. Nothing needs to be
-built or compiled — it is plain HTML, CSS, JavaScript, images and video.
+The site is live on Vercel and building from the `site/` folder.
 
-## What to upload
+- **Live now:** https://kiti-bats.vercel.app
+- **Project:** `kiti-bats` under `louise-du-plessis-projects`
+- **Domain to attach:** www.kiti-bats.co.za (already added to the project — it
+  just needs DNS pointed at Vercel)
 
-Upload **the contents of `site/`** (not the folder itself) into the web root on
-xneelo. On xneelo shared hosting that is usually:
+## Pointing the domain (done at xneelo, in konsoleH)
 
+The domain is registered with xneelo and its DNS still points at the old site
+(41.203.18.177). Two records need to change in konsoleH → DNS management:
+
+| Type | Name | Value |
+|---|---|---|
+| A | `@` (or `kiti-bats.co.za`) | `76.76.21.21` |
+| A | `www` | `76.76.21.21` |
+
+A CNAME on `www` pointing to `cname.vercel-dns.com` also works and is slightly
+better, but xneelo's panel does not always allow it — the A record above is fine.
+
+**Leave the MX records alone.** `kiti-bats.co.za` currently has mail on
+`mail.kiti-bats.co.za`. Changing the A records moves only the website; touching
+the MX records would break email.
+
+DNS changes usually take 15 minutes to a few hours. Vercel issues the HTTPS
+certificate automatically once it sees the records, so there is nothing to
+install — https:// will simply start working.
+
+To check progress:
+
+```bash
+vercel domains inspect www.kiti-bats.co.za
 ```
-/home/<your-account>/public_html/
+
+### There is an old site on that domain
+
+`www.kiti-bats.co.za` currently serves a placeholder page from December 2021.
+Once DNS is repointed, that page is gone from public view. It stays on the
+xneelo server, so nothing is destroyed — but take a copy first if it matters.
+
+## Deploying changes
+
+From the project folder:
+
+```bash
+cd site && vercel deploy --prod
 ```
 
-So `index.html` must end up at `public_html/index.html`, and the assets at
-`public_html/assets/...`.
+That uploads whatever is in `site/` and makes it live. There is no build step.
 
-**Include the hidden `.htaccess` file.** Most FTP clients hide dotfiles by
-default — switch on "show hidden files" before you upload, or the caching,
-compression and the 404 page will not work.
+To publish a test version first (a private URL, nothing public changes):
 
-### Ways to upload
+```bash
+cd site && vercel deploy
+```
 
-- **xneelo File Manager** (konsoleH → Web Hosting → File Manager). Easiest for a
-  one-off: upload `kiti-bat-site.zip` and extract it in `public_html`.
-- **FTP/SFTP client** such as FileZilla or Cyberduck, using the FTP details from
-  konsoleH. Drag the contents of `site/` into `public_html`.
+## One rule when editing CSS or JavaScript
 
-## After the first upload
-
-1. **Check it loads** at your domain, and click through all six pages.
-2. **Turn on SSL** in konsoleH (xneelo includes a free Let's Encrypt
-   certificate). Once the certificate is active, open `.htaccess` and uncomment
-   the HTTPS redirect block near the top so `http://` visitors are sent to
-   `https://`.
-3. **Add the sitemap line** to `robots.txt` once the domain is confirmed, and
-   upload `sitemap.xml`.
-4. **Submit to Google** at search.google.com/search-console — add the property,
-   verify it, and submit the sitemap.
-
-## Making changes later
-
-Edit the files in `site/`, then re-upload only what changed.
-
-One rule: **if you change `style.css` or `main.js`, the `?v=` number in every
-HTML page must change too.** That number is what forces browsers to fetch the
-new file instead of showing a visitor the old cached one. Run this from the
-project folder and it updates every page for you:
+If you change `assets/css/style.css` or `assets/js/main.js`, the `?v=` number in
+every page must change too, or returning visitors keep seeing the old file. Run
+this from the project folder before deploying:
 
 ```bash
 python3 - <<'PY'
@@ -55,28 +70,37 @@ cv = hashlib.sha1((site/"assets/css/style.css").read_bytes()).hexdigest()[:8]
 jv = hashlib.sha1((site/"assets/js/main.js").read_bytes()).hexdigest()[:8]
 for f in site.glob("*.html"):
     s = f.read_text()
-    s = re.sub(r'(href="/?assets/css/style\.css)(\?v=[a-f0-9]+)?"', rf'\1?v={cv}"', s)
-    s = re.sub(r'(src="/?assets/js/main\.js)(\?v=[a-f0-9]+)?"', rf'\1?v={jv}"', s)
+    s = re.sub(r'(href="/assets/css/style\.css)(\?v=[a-f0-9]+)?"', rf'\1?v={cv}"', s)
+    s = re.sub(r'(src="/assets/js/main\.js)(\?v=[a-f0-9]+)?"', rf'\1?v={jv}"', s)
     f.write_text(s)
 print("updated to", cv, jv)
 PY
 ```
 
-## What is on each page
+## How the URLs work
 
-| File | Page |
+`vercel.json` turns on clean URLs, so pages have no `.html` on the end:
+
+| File | Address |
 |---|---|
-| `index.html` | Home — the range, how it works, workshop, Catch-It |
-| `kiti-bat.html` | KiTi-Bat, 45 × 7 cm, American poplar, R350 |
-| `kiti-junior.html` | KiTi Junior, 30 × 11 cm, SA pine ply, R165 |
-| `catch-it-trainer.html` | Catch-It Trainer, R2 000 |
-| `about.html` | Our story, Nico, the workshop |
-| `order.html` | Price list, bulk, delivery, contact |
-| `404.html` | Shown for any broken or mistyped link |
+| `index.html` | `/` |
+| `kiti-bat.html` | `/kiti-bat` |
+| `kiti-junior.html` | `/kiti-junior` |
+| `catch-it-trainer.html` | `/catch-it-trainer` |
+| `about.html` | `/about` |
+| `order.html` | `/order` |
+| `404.html` | shown for any address that does not exist |
+
+Assets are cached for a year (they are versioned), pages are re-checked on every
+visit, so content edits appear immediately after a deploy.
+
+## After the domain is live
+
+Add the site to Google Search Console (search.google.com/search-console),
+verify it, and submit `https://www.kiti-bats.co.za/sitemap.xml`.
 
 ## Contact details on the site
 
 Nico Botha — 082 824 2213 — bothanic@gmail.com — Johannesburg.
 Instagram `@catch_it_trainer`, Facebook `/cathittrainer`.
-These appear in every page footer and on the order page, so if anything changes,
-search and replace across `site/*.html`.
+These appear in every footer and on the order page.
