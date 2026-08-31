@@ -276,7 +276,7 @@ ul { margin: 0 0 1.15em; padding-left: 1.15em; }
   display: inline-flex; align-items: baseline; gap: .45rem; flex-wrap: wrap;
   font-weight: 750; color: var(--ink);
   background: var(--white);
-  border: 2px dashed var(--sun);
+  box-shadow: var(--shadow-sm);
   border-radius: 100px;
   padding: .55rem 1.15rem;
 }
