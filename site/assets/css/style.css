@@ -269,7 +269,6 @@ ul { margin: 0 0 1.15em; padding-left: 1.15em; }
   object-fit: cover;
   border-radius: 26px;
   box-shadow: var(--shadow-lg);
-  border: 2px solid var(--white);
 }
 .hero__art--tall img { aspect-ratio: 4 / 4.4; }
 
@@ -355,9 +354,7 @@ ul { margin: 0 0 1.15em; padding-left: 1.15em; }
   overflow: hidden;
   box-shadow: var(--shadow-md);
   background: var(--cream-deep);
-  border: 2px solid var(--white);
 }
-.section--white .frame { border-color: var(--cream); }
 .frame--tall img, .frame--wide img, .frame--square img { position: absolute; inset: 0; }
 .frame img { width: 100%; height: 100%; object-fit: cover; }
 .frame--tall { aspect-ratio: 4 / 5; }
@@ -460,13 +457,13 @@ ul { margin: 0 0 1.15em; padding-left: 1.15em; }
 
 /* ---------- gallery ---------- */
 .gallery { display: grid; gap: .85rem; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
-.gallery figure { position: relative; margin: 0; border-radius: var(--radius-sm); overflow: hidden; background: var(--cream-deep); aspect-ratio: 1 / 1; box-shadow: var(--shadow-sm); border: 2px solid var(--white); }
+.gallery figure { position: relative; margin: 0; border-radius: var(--radius-sm); overflow: hidden; background: var(--cream-deep); aspect-ratio: 1 / 1; box-shadow: var(--shadow-sm); }
 .section--dark .gallery figure { border-color: rgba(255, 255, 255, .22); }
 .gallery img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
 .gallery figure:hover img { transform: scale(1.06); }
 
 /* ---------- video ---------- */
-.videobox { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-md); background: #0b1526; border: 2px solid var(--white); }
+.videobox { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-md); background: #0b1526; }
 .section--dark .videobox { border-color: rgba(255, 255, 255, .22); }
 .videobox video { width: 100%; height: auto; display: block; }
 
