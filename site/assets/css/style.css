@@ -273,8 +273,8 @@ ul { margin: 0 0 1.15em; padding-left: 1.15em; }
 .hero__art--tall img { aspect-ratio: 4 / 4.4; }
 
 .hero__price {
-  display: inline-flex; align-items: baseline; gap: .45rem; flex-wrap: wrap;
-  font-weight: 750; color: var(--ink);
+  display: inline-flex; align-items: baseline; justify-content: center; gap: .45rem; flex-wrap: wrap;
+  font-weight: 750; color: var(--ink); text-align: center;
   background: var(--white);
   box-shadow: var(--shadow-sm);
   border-radius: 100px;
@@ -560,12 +560,12 @@ ul { margin: 0 0 1.15em; padding-left: 1.15em; }
   aspect-ratio: 4 / 5;
   object-position: 50% 18%;
 }
-/* Full-length product shots: show the whole bat rather than crop it */
+/* Full-length product shots: show the whole bat rather than crop it.
+   No background fill, so the letterbox margins show the page behind it
+   instead of reading as a boxy white card. */
 .hero__art--product img {
   aspect-ratio: 4 / 5;
   object-fit: contain;
-  background: #fff;
-  padding: 1.25rem;
 }
 /* Keep faces in frame inside square gallery tiles */
 .img-top { object-position: 50% 15% !important; }
