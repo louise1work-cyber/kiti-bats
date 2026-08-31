@@ -264,6 +264,7 @@ ul { margin: 0 0 1.15em; padding-left: 1.15em; }
 .hero__art img {
   position: relative;
   width: 100%;
+  height: auto;
   aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: 26px;
