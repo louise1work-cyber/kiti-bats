@@ -271,6 +271,8 @@ ul { margin: 0 0 1.15em; padding-left: 1.15em; }
   box-shadow: var(--shadow-lg);
 }
 .hero__art--tall img { aspect-ratio: 4 / 4.4; }
+.hero__art--reel { max-width: 340px; margin-inline: auto; }
+.hero__art--reel img, .hero__art--reel video { aspect-ratio: 9 / 16; }
 
 .hero__price {
   display: inline-flex; align-items: baseline; justify-content: center; gap: .45rem; flex-wrap: wrap;
