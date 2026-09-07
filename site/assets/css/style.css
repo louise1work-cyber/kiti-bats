@@ -261,7 +261,7 @@ ul { margin: 0 0 1.15em; padding-left: 1.15em; }
   border-radius: 46% 54% 52% 48% / 52% 46% 54% 48%;
   opacity: .16;
 }
-.hero__art img {
+.hero__art img, .hero__art video {
   position: relative;
   width: 100%;
   height: auto;
