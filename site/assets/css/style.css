@@ -157,6 +157,8 @@ ul { margin: 0 0 1.15em; padding-left: 1.15em; }
 .btn--dark:hover { background: var(--forest-deep); color: #fff; }
 .btn--ghost { border-color: var(--ink); color: var(--ink); }
 .btn--ghost:hover { background: var(--ink); color: #fff; }
+.on-dark .btn--primary, .section--dark .btn--primary { background: var(--sun); color: var(--ink); box-shadow: 0 4px 0 #d96f12; }
+.on-dark .btn--primary:hover, .section--dark .btn--primary:hover { background: #ffa155; color: var(--ink); box-shadow: 0 4px 0 #d96f12; }
 .on-dark .btn--ghost, .section--dark .btn--ghost { color: #fff; border-color: rgba(255, 255, 255, .55); }
 .on-dark .btn--ghost:hover, .section--dark .btn--ghost:hover { background: #fff; color: var(--forest); border-color: #fff; }
 .btn--wa { background: #25d366; color: #05330f; box-shadow: 0 4px 0 #14a94b; }
