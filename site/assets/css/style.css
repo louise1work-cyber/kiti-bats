@@ -114,6 +114,7 @@ ul { margin: 0 0 1.15em; padding-left: 1.15em; }
 .section--mint { background: var(--mint); }
 .section--dark { background: var(--forest); color: #ccd8ee; }
 .section--dark h1, .section--dark h2, .section--dark h3 { color: #fff; }
+.on-dark .lede, .section--dark .lede { color: #ccd8ee; }
 .section--willow { background: linear-gradient(165deg, #fdf4dd, #f6e7c4); }
 
 .stack > * + * { margin-top: 1.15rem; }
