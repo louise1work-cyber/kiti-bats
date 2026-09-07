@@ -253,14 +253,6 @@ ul { margin: 0 0 1.15em; padding-left: 1.15em; }
   position: relative;
   margin: 0;
 }
-.hero__art::before {
-  content: "";
-  position: absolute;
-  inset: -6% -5% -8% -6%;
-  background: var(--green);
-  border-radius: 46% 54% 52% 48% / 52% 46% 54% 48%;
-  opacity: .16;
-}
 .hero__art img, .hero__art video {
   position: relative;
   width: 100%;
