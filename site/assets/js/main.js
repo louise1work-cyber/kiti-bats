@@ -25,39 +25,43 @@
   });
 })();
 
-/* Respect reduced-motion for the looping workshop clip */
+/* Respect reduced-motion for every looping decorative clip on the page */
 (function () {
-  var v = document.querySelector('.pano-video');
-  if (!v) return;
+  var videos = document.querySelectorAll('.pano-video');
+  if (!videos.length) return;
 
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
-  if (reduce && reduce.matches) {
-    v.removeAttribute('autoplay');
-    v.loop = false;
-    v.controls = true;
-    v.pause();
-    return;
-  }
+  var isMobile = window.matchMedia && window.matchMedia('(max-width: 700px)').matches;
 
-  /* Don't spend a visitor's mobile data on a decorative clip */
-  if (window.matchMedia && window.matchMedia('(max-width: 700px)').matches) {
-    v.removeAttribute('autoplay');
-    v.controls = true;
-    return;
-  }
+  videos.forEach(function (v) {
+    if (reduce && reduce.matches) {
+      v.removeAttribute('autoplay');
+      v.loop = false;
+      v.controls = true;
+      v.pause();
+      return;
+    }
 
-  /* Only fetch the clip once the band is actually on screen */
-  if (!('IntersectionObserver' in window)) { v.preload = 'auto'; v.load(); return; }
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      if (e.isIntersecting) {
-        v.preload = 'auto';
-        v.load();
-        var p = v.play();
-        if (p && p.catch) p.catch(function () { v.controls = true; });
-        io.disconnect();
-      }
-    });
-  }, { rootMargin: '200px' });
-  io.observe(v);
+    /* Don't spend a visitor's mobile data on a decorative clip */
+    if (isMobile) {
+      v.removeAttribute('autoplay');
+      v.controls = true;
+      return;
+    }
+
+    /* Only fetch the clip once its band is actually on screen */
+    if (!('IntersectionObserver' in window)) { v.preload = 'auto'; v.load(); return; }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          v.preload = 'auto';
+          v.load();
+          var p = v.play();
+          if (p && p.catch) p.catch(function () { v.controls = true; });
+          io.disconnect();
+        }
+      });
+    }, { rootMargin: '200px' });
+    io.observe(v);
+  });
 })();
