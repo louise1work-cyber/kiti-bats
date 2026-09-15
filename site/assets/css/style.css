@@ -500,6 +500,13 @@ ul { margin: 0 0 1.15em; padding-left: 1.15em; }
   display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; justify-content: space-between;
   font-size: .84rem; color: #8fae95;
 }
+/* designer credit: quiet small print under the copyright line */
+.footer-credit { margin: 1rem 0 0; font-size: .78rem; color: #8fae95; }
+.site-footer .footer-credit a {
+  color: inherit; text-decoration: underline;
+  text-decoration-color: rgba(143, 174, 149, .45); text-underline-offset: .2em;
+}
+.site-footer .footer-credit a:hover { color: #fff; text-decoration-color: currentColor; }
 
 /* ---------- sticky mobile order bar ---------- */
 .orderbar {
