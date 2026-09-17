@@ -67,46 +67,32 @@
     }
    ],
    "offers": {
-    "@type": "AggregateOffer",
+    "@type": "Offer",
     "url": "https://www.kiti-bats.co.za/catch-it-trainer",
+    "price": "2000",
     "priceCurrency": "ZAR",
-    "lowPrice": "250",
-    "highPrice": "2000",
-    "offerCount": 4,
     "availability": "https://schema.org/InStock",
+    "itemCondition": "https://schema.org/NewCondition",
     "seller": {
      "@id": "https://www.kiti-bats.co.za/#organization"
     },
-    "offers": [
-     {
-      "@type": "Offer",
-      "name": "Catch-It Trainer",
-      "price": "2000",
-      "priceCurrency": "ZAR",
-      "availability": "https://schema.org/InStock"
+    "areaServed": {
+     "@type": "Country",
+     "name": "South Africa"
+    },
+    "shippingDetails": {
+     "@type": "OfferShippingDetails",
+     "shippingDestination": {
+      "@type": "DefinedRegion",
+      "addressCountry": "ZA"
      },
-     {
-      "@type": "Offer",
-      "name": "Trainer Bag",
-      "price": "480",
-      "priceCurrency": "ZAR",
-      "availability": "https://schema.org/InStock"
-     },
-     {
-      "@type": "Offer",
-      "name": "Bouncer",
-      "price": "850",
-      "priceCurrency": "ZAR",
-      "availability": "https://schema.org/InStock"
-     },
-     {
-      "@type": "Offer",
-      "name": "Indoor adapter",
-      "price": "250",
-      "priceCurrency": "ZAR",
-      "availability": "https://schema.org/InStock"
+     "shippingRate": {
+      "@type": "MonetaryAmount",
+      "currency": "ZAR",
+      "minValue": "100",
+      "maxValue": "300"
      }
-    ]
+    }
    }
   },
   {
@@ -146,6 +132,8 @@
  ]
 }
 </script>
+<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
