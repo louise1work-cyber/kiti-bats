@@ -693,3 +693,127 @@ ul { margin: 0 0 1.15em; padding-left: 1.15em; }
   .lb__nav { top: auto; bottom: .75rem; transform: none; }
 }
 body.lb-open { overflow: hidden; }
+
+/* ==========================================================================
+   Liveliness pass — motion, a full-bleed action band, bolder accents
+   ========================================================================== */
+
+/* ---------- scroll reveal (used site-wide) ---------- */
+.reveal { opacity: 0; transform: translateY(22px); }
+.reveal.is-in {
+  opacity: 1; transform: none;
+  transition: opacity .7s cubic-bezier(.2,.7,.3,1), transform .7s cubic-bezier(.2,.7,.3,1);
+}
+/* children of a revealed group come in one after another */
+.reveal-group > * { opacity: 0; transform: translateY(22px); }
+.reveal-group.is-in > * {
+  opacity: 1; transform: none;
+  transition: opacity .6s cubic-bezier(.2,.7,.3,1), transform .6s cubic-bezier(.2,.7,.3,1);
+}
+.reveal-group.is-in > *:nth-child(2) { transition-delay: .09s; }
+.reveal-group.is-in > *:nth-child(3) { transition-delay: .18s; }
+.reveal-group.is-in > *:nth-child(4) { transition-delay: .27s; }
+.reveal-group.is-in > *:nth-child(5) { transition-delay: .36s; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal-group > * { opacity: 1; transform: none; transition: none; }
+}
+
+/* ---------- hero: let the product drift, and cue the scroll ---------- */
+@keyframes kb-float { from { transform: translateY(-9px); } to { transform: translateY(9px); } }
+.hero__art--reel img { animation: kb-float 6s ease-in-out infinite alternate; }
+.hero__art::after {
+  content: ""; position: absolute; inset: -14% -10% -10% -12%; z-index: -1;
+  background: radial-gradient(60% 55% at 50% 45%, rgba(255,138,43,.16), transparent 70%);
+}
+.hero__art { position: relative; }
+@media (prefers-reduced-motion: reduce) { .hero__art--reel img { animation: none; } }
+
+/* ---------- full-bleed action band ----------
+   The demo clips are portrait phone footage. Cropping one to a cinematic
+   letterbox put the rider's face behind the copy and filled the rest with
+   sky, so the band holds the clip at its own 9:16 instead and the colour
+   does the full-width work. */
+.band {
+  position: relative; isolation: isolate; overflow: hidden;
+  background: linear-gradient(135deg, var(--forest) 0%, var(--forest-deep) 70%);
+  color: #fff;
+  padding-block: clamp(3rem, 6vw, 5rem);
+}
+.band::before {
+  content: ""; position: absolute; z-index: -1;
+  width: 60vw; aspect-ratio: 1; right: -14vw; top: -22%;
+  background: radial-gradient(circle, rgba(255,138,43,.22), transparent 62%);
+  pointer-events: none;
+}
+.band__grid { display: grid; gap: clamp(2rem, 5vw, 3.5rem); align-items: center; }
+@media (min-width: 880px) {
+  .band__grid { grid-template-columns: 1.15fr .85fr; }
+}
+.band .h2 { color: #fff; }
+.band .lede { color: rgba(255,255,255,.88); margin-top: 1.25rem; }
+.band .kicker { color: var(--sun); }
+
+.band__reel {
+  margin: 0; position: relative; width: 100%; max-width: 330px;
+  margin-inline: auto; border-radius: 26px; overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  transform: rotate(-2deg);
+}
+.band__reel video, .band__reel img {
+  /* the clip keeps .pano-video so main.js still applies the reduced-motion and
+     mobile-data rules, but here it sits in flow rather than filling an ancestor */
+  position: relative;
+  display: block; width: 100%; height: auto; aspect-ratio: 9 / 16; object-fit: cover;
+}
+@media (prefers-reduced-motion: reduce) { .band__reel { transform: none; } }
+
+/* big honest numbers under the copy */
+.tally { display: flex; flex-wrap: wrap; gap: clamp(1.5rem, 5vw, 3rem); margin-top: 2.25rem; }
+.tally__item b {
+  display: block; font-size: clamp(2.1rem, 1.3rem + 3vw, 3.2rem);
+  font-weight: 800; letter-spacing: -.03em; line-height: 1; color: var(--sun);
+}
+.tally__item span {
+  display: block; margin-top: .45rem; font-size: .78rem; font-weight: 700;
+  letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.7);
+}
+
+/* ---------- trust strip: give it some life ---------- */
+.strip__item { transition: transform .2s ease; }
+.strip__item:hover { transform: translateY(-3px); }
+
+/* ---------- cards: a touch more lift ---------- */
+.card { transition: transform .25s cubic-bezier(.2,.7,.3,1), box-shadow .25s ease; }
+.card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+.card__media img { transition: transform .5s cubic-bezier(.2,.7,.3,1); }
+.card:hover .card__media img { transform: scale(1.05); }
+@media (prefers-reduced-motion: reduce) {
+  .card:hover { transform: none; }
+  .card:hover .card__media img { transform: none; }
+}
+
+/* ---------- section headings a shade bigger on the home page ---------- */
+.section--bone .h2, .section--willow .h2 { letter-spacing: -.025em; }
+
+/* ---------- photo ribbon: a moving strip of the gallery ---------- */
+.ribbon { padding-block: clamp(2.5rem, 5vw, 4rem); overflow: hidden; background: var(--cream); }
+.ribbon__head { text-align: center; margin-bottom: 2rem; }
+.ribbon__track {
+  display: flex; gap: 1rem; width: max-content;
+  animation: ribbon-slide 52s linear infinite;
+}
+.ribbon:hover .ribbon__track,
+.ribbon:focus-within .ribbon__track { animation-play-state: paused; }
+@keyframes ribbon-slide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.ribbon__track figure {
+  margin: 0; flex: 0 0 auto;
+  width: clamp(180px, 22vw, 260px); aspect-ratio: 3 / 4;
+  border-radius: var(--radius-sm); overflow: hidden; box-shadow: var(--shadow-sm);
+  background: var(--cream-deep);
+}
+.ribbon__track img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ribbon__foot { text-align: center; margin-top: 2rem; }
+@media (prefers-reduced-motion: reduce) {
+  /* no drift — let it be an ordinary row the reader can scroll themselves */
+  .ribbon__track { animation: none; width: auto; overflow-x: auto; padding-bottom: .5rem; }
+}

@@ -23,7 +23,7 @@
 <link rel="icon" href="/favicon.ico?v=e1fb769e" sizes="32x32">
 <link rel="icon" href="/assets/img/icon-512.png?v=19b3a19d" type="image/png" sizes="512x512">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png?v=f233a903">
-<link rel="stylesheet" href="/assets/css/style.css?v=91eddf87">
+<link rel="stylesheet" href="/assets/css/style.css?v=76906372">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -126,23 +126,6 @@
   },
   {
    "@type": "VideoObject",
-   "@id": "https://www.kiti-bats.co.za/#video-making-of",
-   "name": "From a block of poplar to a finished KiTi-Bat",
-   "description": "A block of poplar being shaped into a finished KiTi-Bat, ending with the ball bouncing on the face of the bat.",
-   "thumbnailUrl": [
-    "https://www.kiti-bats.co.za/assets/img/making-of-poster.jpg"
-   ],
-   "uploadDate": "2026-08-18T20:51:19+02:00",
-   "duration": "PT10S",
-   "contentUrl": "https://www.kiti-bats.co.za/assets/video/making-of.mp4",
-   "isFamilyFriendly": true,
-   "inLanguage": "en-ZA",
-   "publisher": {
-    "@id": "https://www.kiti-bats.co.za/#organization"
-   }
-  },
-  {
-   "@type": "VideoObject",
    "@id": "https://www.kiti-bats.co.za/#video-bat-demo-driveway",
    "name": "Training with a KiTi-Bat in a driveway",
    "description": "A young cricketer in a driveway hitting the ball on a KiTi-Bat, again and again, without it leaving the face of the bat.",
@@ -152,6 +135,57 @@
    "uploadDate": "2026-09-08T13:23:00+00:00",
    "duration": "PT12S",
    "contentUrl": "https://www.kiti-bats.co.za/assets/video/bat-demo-driveway.mp4",
+   "isFamilyFriendly": true,
+   "inLanguage": "en-ZA",
+   "publisher": {
+    "@id": "https://www.kiti-bats.co.za/#organization"
+   }
+  },
+  {
+   "@type": "VideoObject",
+   "@id": "https://www.kiti-bats.co.za/#video-bat-demo-3",
+   "name": "A young player training with a KiTi-Bat",
+   "description": "A young player at a tournament hitting the ball on a KiTi-Bat, again and again, without it leaving the face of the bat.",
+   "thumbnailUrl": [
+    "https://www.kiti-bats.co.za/assets/img/bat-demo-3-poster.jpg"
+   ],
+   "uploadDate": "2026-09-07T12:29:46+00:00",
+   "duration": "PT5S",
+   "contentUrl": "https://www.kiti-bats.co.za/assets/video/bat-demo-3.mp4",
+   "isFamilyFriendly": true,
+   "inLanguage": "en-ZA",
+   "publisher": {
+    "@id": "https://www.kiti-bats.co.za/#organization"
+   }
+  },
+  {
+   "@type": "VideoObject",
+   "@id": "https://www.kiti-bats.co.za/#video-junior-demo-2",
+   "name": "A young player training with a KiTi Junior",
+   "description": "A young player hitting the ball on a KiTi Junior, again and again, without it leaving the face of the bat.",
+   "thumbnailUrl": [
+    "https://www.kiti-bats.co.za/assets/img/junior-demo-2-poster.jpg"
+   ],
+   "uploadDate": "2026-09-07T12:52:15+00:00",
+   "duration": "PT19S",
+   "contentUrl": "https://www.kiti-bats.co.za/assets/video/junior-demo-2.mp4",
+   "isFamilyFriendly": true,
+   "inLanguage": "en-ZA",
+   "publisher": {
+    "@id": "https://www.kiti-bats.co.za/#organization"
+   }
+  },
+  {
+   "@type": "VideoObject",
+   "@id": "https://www.kiti-bats.co.za/#video-making-of",
+   "name": "From a block of poplar to a finished KiTi-Bat",
+   "description": "A block of poplar being shaped into a finished KiTi-Bat, ending with the ball bouncing on the face of the bat.",
+   "thumbnailUrl": [
+    "https://www.kiti-bats.co.za/assets/img/making-of-poster.jpg"
+   ],
+   "uploadDate": "2026-08-18T20:51:19+02:00",
+   "duration": "PT10S",
+   "contentUrl": "https://www.kiti-bats.co.za/assets/video/making-of.mp4",
    "isFamilyFriendly": true,
    "inLanguage": "en-ZA",
    "publisher": {
@@ -203,7 +237,12 @@
         </div>
       </div>
       <figure class="hero__art hero__art--reel">
-        <img src="/assets/img/kitibat-vs-junior.jpg" alt="A KiTi-Bat and a KiTi Junior side by side, showing the difference in length and width" fetchpriority="high" width="911" height="1600">
+        <video class="pano-video" autoplay muted loop playsinline preload="none"
+               poster="/assets/img/bat-demo-driveway-hero.jpg"
+               aria-label="A young cricketer in a driveway hitting the ball on a KiTi-Bat, again and again, without it leaving the face of the bat">
+          <source src="/assets/video/bat-demo-driveway.mp4" type="video/mp4">
+          <img src="/assets/img/kitibat-vs-junior.jpg" alt="A KiTi-Bat and a KiTi Junior side by side, showing the difference in length and width" width="911" height="1600">
+        </video>
       </figure>
     </div>
   </section>
@@ -211,7 +250,7 @@
   <!-- TRUST STRIP -->
   <section class="strip">
     <div class="wrap">
-      <div class="strip__grid">
+      <div class="strip__grid reveal-group">
         <div class="strip__item"><b>Made by hand</b><span>Shaped, sanded and finished one at a time in our own workshop.</span></div>
         <div class="strip__item"><b>Ages 5 to 80</b><span>Two sizes, so the bat fits the player rather than the other way round.</span></div>
         <div class="strip__item"><b>Club &amp; academy pricing</b><span>Bulk rates on application for coaches, schools, clubs and academies.</span></div>
@@ -220,16 +259,40 @@
     </div>
   </section>
 
+  <!-- ACTION BAND -->
+  <section class="band">
+    <div class="wrap band__grid">
+      <div class="band__copy reveal">
+        <span class="kicker">The whole idea</span>
+        <h2 class="h2">Hit it. It comes straight back. Do it again.</h2>
+        <p class="lede">No bowler, no net, no fielder, nobody to feed you balls. A driveway and five minutes is the whole setup &mdash; and the ball tells you the truth every single time you miss the middle.</p>
+        <div class="tally">
+          <div class="tally__item"><b>45 cm</b><span>The KiTi-Bat</span></div>
+          <div class="tally__item"><b>30 cm</b><span>The KiTi Junior</span></div>
+          <div class="tally__item"><b>5&ndash;80</b><span>Ages it suits</span></div>
+        </div>
+      </div>
+      <figure class="band__reel reveal">
+        <video class="pano-video" autoplay muted loop playsinline preload="none"
+               poster="/assets/img/bat-demo-3-poster.jpg"
+               aria-label="A young player at a tournament hitting the ball on a KiTi-Bat, again and again, without it leaving the face of the bat">
+          <source src="/assets/video/bat-demo-3.mp4" type="video/mp4">
+          <img src="/assets/img/bat-demo-3-poster.jpg" alt="A young player in club colours batting with a KiTi-Bat at a tournament" width="480" height="864">
+        </video>
+      </figure>
+    </div>
+  </section>
+
   <!-- THE RANGE -->
   <section class="section section--bone" id="range">
     <div class="wrap">
-      <div class="center measure-center" style="margin-bottom: 2.75rem;">
+      <div class="center measure-center reveal" style="margin-bottom: 2.75rem;">
         <span class="kicker">The Range</span>
         <h2 class="h2 rule center">Three tools. One skill.</h2>
         <p class="lede" style="margin-top:1.5rem;">Hand-eye coordination is the difference between a player who reacts and a player who reads the ball. Two bat sizes and a rebound net, each training it from a different angle.</p>
       </div>
 
-      <div class="cards">
+      <div class="cards reveal-group">
 
         <article class="card">
           <div class="card__media">
@@ -282,7 +345,7 @@
         <h2 class="h2 rule center">One system. Two entry points.</h2>
         <p class="lede" style="margin-top:1.5rem;">It looks like backyard fun, but every swing is doing a job: sharpening hand-eye coordination, reflexes and peripheral vision &mdash; the things a batter's game is actually built on. Quick warm-ups, high repetitions, real results.</p>
       </div>
-      <ol class="steps">
+      <ol class="steps reveal-group">
         <li><b>Start on KiTi Junior</b><p>The entry point. A wide, forgiving face so a young player gets clean contact from the first session and wants to come back for more.</p></li>
         <li><b>Move up to KiTi-Bat</b><p>The full system. A narrower face, the same drills at a harder level, both hands and the eyes working together under real pressure.</p></li>
       </ol>
@@ -295,10 +358,10 @@
   <!-- HOW IT WORKS -->
   <section class="section section--white">
     <div class="wrap split split--wide-right">
-      <div class="frame frame--tall">
-        <video class="pano-video" autoplay muted loop playsinline preload="none" poster="/assets/img/bat-demo-driveway-poster.jpg"
-               aria-label="A young cricketer in a driveway hitting the ball on a KiTi-Bat, again and again, without it leaving the face of the bat">
-          <source src="/assets/video/bat-demo-driveway.mp4" type="video/mp4">
+      <div class="frame frame--tall reveal">
+        <video class="pano-video" autoplay muted loop playsinline preload="none" poster="/assets/img/junior-demo-2-poster.jpg"
+               aria-label="A young player hitting the ball on a KiTi Junior, again and again, without it leaving the face of the bat">
+          <source src="/assets/video/junior-demo-2.mp4" type="video/mp4">
           <img src="/assets/img/bats-packed.jpg?v=d7138bb8" alt="KiTi-Bats packed in a box, each with its rubber ball and elastic cord attached" width="610" height="1045">
         </video>
       </div>
@@ -306,7 +369,7 @@
         <span class="kicker">How it works</span>
         <h2 class="h2 rule">Keep the ball on the bat.</h2>
         <p class="lede" style="margin-top:1.5rem;">A rubber ball hangs from the bat on an elastic string. You hit it, it comes straight back, and the game is to keep it going on the face of the bat — hit after hit after hit.</p>
-        <ul class="features">
+        <ul class="features reveal-group">
           <li><span class="dot" aria-hidden="true">&check;</span><div><b>Hundreds of repetitions</b><span>In a few minutes, on your own. No bowler, no net, no fielder.</span></div></li>
           <li><span class="dot" aria-hidden="true">&check;</span><div><b>Instant feedback</b><span>Miss the middle and the ball tells you immediately. No coach needed.</span></div></li>
           <li><span class="dot" aria-hidden="true">&check;</span><div><b>Trains ball tracking</b><span>The eyes learn to stay on the ball right onto the face of the bat.</span></div></li>
@@ -350,7 +413,7 @@
         <span class="kicker">Catch-It Trainer</span>
         <h2 class="h2 rule">After many years — we're back.</h2>
         <p class="lede" style="margin-top:1.5rem;">Catch-It returns a thrown ball at incredible speed. Each net is hand-strung, almost like a tennis racket, and the tension is what gives it its life. Use it solo or as a team trainer — for cricket, netball and tennis.</p>
-        <ul class="features">
+        <ul class="features reveal-group">
           <li><span class="dot" aria-hidden="true">&check;</span><div><b>Adjustable return height</b><span>Quick and easy to change — high catches one minute, sharp ground fielding the next.</span></div></li>
           <li><span class="dot" aria-hidden="true">&check;</span><div><b>Grows with the player</b><span>The harder you throw, the harder it comes back. It never stops being useful.</span></div></li>
           <li><span class="dot" aria-hidden="true">&check;</span><div><b>Light and portable</b><span>Roughly 900 x 900mm, easy to carry, with an optional trainer bag.</span></div></li>
@@ -359,9 +422,42 @@
           <a class="btn btn--dark" href="/catch-it-trainer">Full details &amp; pricing</a>
         </div>
       </div>
-      <div class="frame frame--wide">
+      <div class="frame frame--tall reveal">
         <img src="/assets/img/catchit-in-use.jpg" alt="Two young cricketers training with the Catch-It rebound net on a field" loading="lazy" width="497" height="884">
       </div>
+    </div>
+  </section>
+
+  <!-- PHOTO RIBBON -->
+  <section class="ribbon">
+    <div class="wrap ribbon__head reveal">
+      <span class="kicker">From the workshop and the nets</span>
+      <h2 class="h2 rule center">Every picture here is ours.</h2>
+    </div>
+    <div class="ribbon__track">
+        <figure><img src="/assets/img/nico-tournament-1.jpg" alt="Nico with a young player at a junior tournament" loading="lazy"></figure>
+        <figure><img src="/assets/img/workshop-bats.jpg" alt="A rack of KiTi bats hanging in the workshop while the finish dries" loading="lazy"></figure>
+        <figure><img src="/assets/img/kitibat-edge.jpg" alt="A finished KiTi-Bat lying on grass with its blue ball" loading="lazy"></figure>
+        <figure><img src="/assets/img/junior-blanks-crate.jpg" alt="A crate of KiTi Junior plywood blanks" loading="lazy"></figure>
+        <figure><img src="/assets/img/bats-packed.jpg" alt="Finished KiTi-Bats wrapped and packed in a box" loading="lazy"></figure>
+        <figure><img src="/assets/img/willow-planks.jpg" alt="Boards marked with chalk lines on the workshop floor" loading="lazy"></figure>
+        <figure><img src="/assets/img/catchit-kit.jpg" alt="Catch-It Trainer nets set up on a field with the carry bag" loading="lazy"></figure>
+        <figure><img src="/assets/img/bat-blanks.jpg" alt="A pile of freshly cut pale poplar bat blanks" loading="lazy"></figure>
+        <figure><img src="/assets/img/junior-award.jpg" alt="A young cricketer holding an award at a club day" loading="lazy"></figure>
+        <figure><img src="/assets/img/bat-shaping-pair.jpg" alt="Two bat blanks part-way through being shaped" loading="lazy"></figure>
+        <figure aria-hidden="true"><img src="/assets/img/nico-tournament-1.jpg" alt="" loading="lazy"></figure>
+        <figure aria-hidden="true"><img src="/assets/img/workshop-bats.jpg" alt="" loading="lazy"></figure>
+        <figure aria-hidden="true"><img src="/assets/img/kitibat-edge.jpg" alt="" loading="lazy"></figure>
+        <figure aria-hidden="true"><img src="/assets/img/junior-blanks-crate.jpg" alt="" loading="lazy"></figure>
+        <figure aria-hidden="true"><img src="/assets/img/bats-packed.jpg" alt="" loading="lazy"></figure>
+        <figure aria-hidden="true"><img src="/assets/img/willow-planks.jpg" alt="" loading="lazy"></figure>
+        <figure aria-hidden="true"><img src="/assets/img/catchit-kit.jpg" alt="" loading="lazy"></figure>
+        <figure aria-hidden="true"><img src="/assets/img/bat-blanks.jpg" alt="" loading="lazy"></figure>
+        <figure aria-hidden="true"><img src="/assets/img/junior-award.jpg" alt="" loading="lazy"></figure>
+        <figure aria-hidden="true"><img src="/assets/img/bat-shaping-pair.jpg" alt="" loading="lazy"></figure>
+    </div>
+    <div class="wrap ribbon__foot">
+      <a class="btn btn--ghost" href="/gallery">See the gallery</a>
     </div>
   </section>
 
@@ -430,6 +526,6 @@
   <a class="btn btn--primary" href="/order">Order now</a>
 </div>
 
-<script src="/assets/js/main.js?v=3509329d" defer></script>
+<script src="/assets/js/main.js?v=45008fcf" defer></script>
 </body>
 </html>

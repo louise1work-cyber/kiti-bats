@@ -176,3 +176,25 @@
     });
   });
 })();
+
+/* Scroll reveal: fade sections and their children in as they arrive */
+(function () {
+  var targets = document.querySelectorAll('.reveal, .reveal-group');
+  if (!targets.length) return;
+
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) {
+    targets.forEach(function (el) { el.classList.add('is-in'); });
+    return;
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('is-in');
+      io.unobserve(e.target);
+    });
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.12 });
+
+  targets.forEach(function (el) { io.observe(el); });
+})();
