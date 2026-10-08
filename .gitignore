@@ -1,2 +1,4 @@
 .DS_Store
 .vercel
+# macOS metadata files, created on the exFAT drive
+._*
