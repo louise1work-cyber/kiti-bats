@@ -42,10 +42,10 @@ xneelo server, so nothing is destroyed — but take a copy first if it matters.
 
 ## Deploying changes
 
-From the project folder:
+From the project folder (not `site/` — Vercel already builds from `site/`):
 
 ```bash
-cd site && vercel deploy --prod
+vercel deploy --prod
 ```
 
 That uploads whatever is in `site/` and makes it live. There is no build step.
@@ -53,7 +53,7 @@ That uploads whatever is in `site/` and makes it live. There is no build step.
 To publish a test version first (a private URL, nothing public changes):
 
 ```bash
-cd site && vercel deploy
+vercel deploy
 ```
 
 ## One rule when editing CSS or JavaScript
@@ -96,8 +96,15 @@ visit, so content edits appear immediately after a deploy.
 
 ## After the domain is live
 
-Add the site to Google Search Console (search.google.com/search-console),
-verify it, and submit `https://www.kiti-bats.co.za/sitemap.xml`.
+Done on 14 October 2026: `kiti-bats.co.za` is a verified Domain property in
+Google Search Console and `https://www.kiti-bats.co.za/sitemap.xml` is
+submitted. Verification relies on the TXT record on `@`
+(`google-site-verification=…`) — keep it.
+
+**Edit DNS in the xneelo Control Panel, not konsoleH.** Records added in
+konsoleH show up there but are not reliably published, and a hostname typed as
+`kiti-bats.co.za` ends up at `kiti-bats.co.za.kiti-bats.co.za`. Use `@` for the
+bare domain.
 
 ## Contact details on the site
 
